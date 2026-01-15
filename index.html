@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zia Qi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #fff;
+      color: #000;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 60px 24px;
+    }
+
+    /* Header Section */
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .headshot {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+
+    .name {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .email {
+      color: #666;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .email:hover {
+      color: #000;
+    }
+
+    /* Navigation Tabs */
+    .nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 24px;
+      margin: 40px 0 30px 0;
+    }
+
+    .nav-tab {
+      background: none;
+      border: none;
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: #666;
+      cursor: pointer;
+      padding: 8px 4px;
+      transition: color 0.2s;
+    }
+
+    .nav-tab:hover {
+      color: #000;
+    }
+
+    .nav-tab.active {
+      color: #000;
+      font-weight: 600;
+    }
+
+    /* Content Sections */
+    .content-section {
+      display: none;
+    }
+
+    .content-section.visible {
+      display: block;
+    }
+
+    /* About Section (styled, no terminal) */
+    .about-section p {
+      margin-bottom: 16px;
+    }
+
+    .about-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Terminal Section */
+    .terminal {
+      background: #1a1a1a;
+      color: #fff;
+      border-radius: 12px;
+      padding: 24px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    .terminal-content {
+      white-space: pre-wrap;
+    }
+
+    .terminal-content a {
+      color: #7dd3fc;
+      text-decoration: none;
+    }
+
+    .terminal-content a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .container {
+        padding: 40px 16px;
+      }
+
+      .name {
+        font-size: 1.5rem;
+      }
+
+      .nav {
+        gap: 4px 16px;
+      }
+
+      .nav-tab {
+        font-size: 0.85rem;
+      }
+
+      .terminal {
+        padding: 16px;
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <img src="headshot.png" alt="Zia Qi" class="headshot">
+      <h1 class="name">Zia Qi</h1>
+      <a href="mailto:qizixuan@umich.edu" class="email">qizixuan@umich.edu</a>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <button class="nav-tab active" data-tab="about">About Me</button>
+      <button class="nav-tab" data-tab="ai-research">AI & Research</button>
+      <button class="nav-tab" data-tab="data-systems">Data Systems</button>
+      <button class="nav-tab" data-tab="data-viz">Data Viz</button>
+      <button class="nav-tab" data-tab="data-analysis">Data Analysis</button>
+      <button class="nav-tab" data-tab="consulting">Consulting</button>
+    </nav>
+
+    <!-- About Section (no terminal effect) -->
+    <section class="content-section visible about-section" id="about">
+      <p><strong>Hi, I'm Zia Qi.</strong></p>
+
+      <p>My job title says "Research Technology Specialist" at the DataLab, University of Michigan School of Social Work. But honestly? That's just what fit on the business card.</p>
+
+      <p>On any given day, I might be a <strong>data analyst</strong> turning messy datasets into stories that actually make sense. Or a <strong>Python developer</strong> building apps and websites from scratch. Or a <strong>data engineer</strong> architecting pipelines that run while I sleep. Or a <strong>full-stack developer</strong> wiring together entire systems from the database to the button you just clicked.</p>
+
+      <p>I'm also a researcher exploring how <strong>AI</strong> can make a real difference in social work—because what's the point of all this tech if it doesn't help people?</p>
+
+      <p>Some people specialize. I generalize—aggressively.</p>
+
+      <p>Got a data problem? I probably have three ways to solve it and opinions about which one's best. Need a visualization that doesn't make your audience fall asleep? Let's talk. Want someone who can go from "we have this idea" to "here's the working system"? That's my favorite kind of Tuesday.</p>
+
+      <p>I'm also known to vibe code at 2am. This website is proof of that.</p>
+
+      <p><strong>Welcome to my corner of the internet.</strong> Poke around, see what I've built, and reach out if you want to build something together.</p>
+    </section>
+
+    <!-- AI & Research Section -->
+    <section class="content-section" id="ai-research">
+      <div class="terminal">
+        <div class="terminal-content" id="ai-research-content"></div>
+      </div>
+    </section>
+
+    <!-- Data Systems Section -->
+    <section class="content-section" id="data-systems">
+      <div class="terminal">
+        <div class="terminal-content" id="data-systems-content"></div>
+      </div>
+    </section>
+
+    <!-- Data Viz Section -->
+    <section class="content-section" id="data-viz">
+      <div class="terminal">
+        <div class="terminal-content" id="data-viz-content"></div>
+      </div>
+    </section>
+
+    <!-- Data Analysis Section -->
+    <section class="content-section" id="data-analysis">
+      <div class="terminal">
+        <div class="terminal-content" id="data-analysis-content"></div>
+      </div>
+    </section>
+
+    <!-- Consulting Section -->
+    <section class="content-section" id="consulting">
+      <div class="terminal">
+        <div class="terminal-content" id="consulting-content"></div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    // Tab content (terminal sections only)
+    const terminalContent = {
+      'ai-research': {
+        text: `My current research focuses on applying local language models for text analysis on large-scale sensitive data from the Michigan Child Welfare System — drawing insights that inform policy making.
+
+Publications:
+
+1. Qi, Z., Perron, B. E., Wang, M., Fang, C., Chen, S., & Victor, B. G. (2026). Artificial intelligence and cultural context: An empirical investigation of Large Language Models' performance on Chinese social work professional standards. Journal of the Society for Social Work and Research, 16(4), 000-000. `,
+        links: [
+          { url: 'https://doi.org/10.1086/735590', text: 'https://doi.org/10.1086/735590' }
+        ],
+        text2: `
+
+2. Qi, Z., Perron, B. E., Victor, B. G., Stoll, D., & Ryan, J. P. (In Press). Small models achieve large language model performance: Evaluating Reasoning-Enabled AI for Secure Child Welfare Research. Journal of Evidence-Based Social Work. `,
+        links2: [
+          { url: 'https://doi.org/10.48550/arXiv.2512.04261', text: 'https://doi.org/10.48550/arXiv.2512.04261' }
+        ],
+        text3: `
+
+3. Perron, B. E., Goldkind, L., Qi, Z., & Victor, B. G. (2025). Human services organizations and the responsible integration of AI: Considering ethics and contextualizing risk(s). Journal of Technology in Human Services, 43(1), 20-33. `,
+        links3: [
+          { url: 'https://doi.org/10.1080/15228835.2025.2457045', text: 'https://doi.org/10.1080/15228835.2025.2457045' }
+        ],
+        text4: `
+
+4. Perron, B. E., Rivenburgh, K. A., Victor, B. G., Qi, Z., & Luan, H. (2025). A primer on word embeddings: AI techniques for text analysis in social work. Journal of the Society for Social Work and Research, 16(2), 000-000. `,
+        links4: [
+          { url: 'https://doi.org/10.1086/735577', text: 'https://doi.org/10.1086/735577' }
+        ],
+        text5: `
+
+5. Perron, B. E., Luan, H., Qi, Z., Victor, B. G., & Goyal, K. (2025). Demystifying application programming interfaces (APIs): Unlocking the power of Large Language Models and other web-based AI services in social work research. Journal of the Society for Social Work and Research, 16(2), 000-000. `,
+        links5: [
+          { url: 'https://doi.org/10.1086/735364', text: 'https://doi.org/10.1086/735364' }
+        ],
+        text6: `
+
+6. Perron, B. E., & Qi, Z. (2025). Theoretical and methodological shifts in social work research: An AI-driven analysis of postmodern and critical theory at the SSWR Annual Conference. Research on Social Work Practice. Advance online publication. `,
+        links6: [
+          { url: 'https://doi.org/10.1177/10497315251352838', text: 'https://doi.org/10.1177/10497315251352838' }
+        ],
+        text7: `
+
+7. Ryan, J., Baron, E. J., Qi, Z., Perron, B., & Victor, B. (2025). Unconditional cash transfers and early child maltreatment (SSRN 5798869). SSRN. `,
+        links7: [
+          { url: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5798869', text: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5798869' }
+        ],
+        text8: `
+
+8. Victor, B. G., McNally, K., Qi, Z., & Perron, B. E. (2024). Construct-irrelevant variance on the ASWB clinical social work licensing exam: A replication of prior validity concerns. Research on Social Work Practice, 34(2), 217-221. `,
+        links8: [
+          { url: 'https://doi.org/10.1177/10497315231188305', text: 'https://doi.org/10.1177/10497315231188305' }
+        ],
+        text9: `
+
+9. Forrester, M. B., Qi, Z., Perron, B., & Noor, S. R. (2024). Brief report: Pediatric cannabis exposures treated at United States hospital emergency departments. Texas Public Health Journal, 76(1).`
+      },
+
+      'data-systems': `Michigan Juvenile Justice Bed Management Tool
+
+A comprehensive statewide data solution encompassing:
+
+- Data collection application for end users
+- Automated data pipelines for real-time processing
+- Database architecture for storage and monitoring
+- Administrative data management tools
+- Public automated data reporting dashboard
+
+{{LINK|https://www.michigan.gov/mdhhs/adult-child-serv/juvenilejustice/bed-management-tool|View Project →}}`,
+
+      'data-viz': `Michigan Court Dashboard
+
+Lead Developer
+
+Interactive visualization platform for court data analytics.
+
+{{LINK|https://ssw-datalab.org/visualizations/#visualization-46|View Dashboard →}}`,
+
+      'data-analysis': `Domains of expertise:
+
+- Child Welfare Data (MIDHHS)
+- Statewide Maltreatment Analysis
+- Maltreatment in Care
+- Reunification
+- Juvenile Justice Data
+- Statewide Educational Data
+- SafeCare Evaluation
+- ISEP Data Report Validation
+- RxKids
+- Kinship Care`,
+
+      'consulting': `I provide data consulting services to researchers and organizations — transforming complex data challenges into clear, actionable solutions.
+
+Whether you need help with data architecture, analysis methodology, or AI integration, I can help you navigate the path forward.
+
+Reach out: {{LINK|mailto:qizixuan@umich.edu|qizixuan@umich.edu}}`
+    };
+
+    // Typewriter state
+    let isTyping = false;
+    let skipTyping = false;
+    let currentTab = 'about';
+    let typedTabs = new Set();
+
+    // Parse content and separate text from links
+    function parseContent(content) {
+      if (typeof content === 'object') {
+        // Complex content with multiple text/link sections (for ai-research)
+        return content;
+      }
+
+      // Simple content with {{LINK|url|text}} markers
+      const parts = [];
+      let remaining = content;
+      const linkRegex = /\{\{LINK\|([^|]+)\|([^}]+)\}\}/;
+
+      while (remaining) {
+        const match = remaining.match(linkRegex);
+        if (match) {
+          const index = match.index;
+          if (index > 0) {
+            parts.push({ type: 'text', content: remaining.substring(0, index) });
+          }
+          parts.push({ type: 'link', url: match[1], text: match[2] });
+          remaining = remaining.substring(index + match[0].length);
+        } else {
+          parts.push({ type: 'text', content: remaining });
+          break;
+        }
+      }
+      return parts;
+    }
+
+    // Typewriter function for simple content
+    async function typeContent(element, content, speed = 8) {
+      isTyping = true;
+      skipTyping = false;
+      element.innerHTML = '';
+
+      const parts = parseContent(content);
+
+      for (const part of parts) {
+        if (skipTyping) {
+          // Render remaining content instantly
+          let html = element.innerHTML;
+          for (let i = parts.indexOf(part); i < parts.length; i++) {
+            const p = parts[i];
+            if (p.type === 'text') {
+              html += p.content;
+            } else {
+              html += `<a href="${p.url}" target="_blank">${p.text}</a>`;
+            }
+          }
+          element.innerHTML = html;
+          break;
+        }
+
+        if (part.type === 'text') {
+          for (let i = 0; i < part.content.length; i++) {
+            if (skipTyping) {
+              element.innerHTML += part.content.substring(i);
+              break;
+            }
+            element.innerHTML += part.content[i];
+            await new Promise(r => setTimeout(r, speed));
+          }
+        } else {
+          // Add link instantly
+          element.innerHTML += `<a href="${part.url}" target="_blank">${part.text}</a>`;
+        }
+      }
+
+      isTyping = false;
+    }
+
+    // Special typewriter for AI research (complex structure)
+    async function typeAIResearch(element, content, speed = 8) {
+      isTyping = true;
+      skipTyping = false;
+      element.innerHTML = '';
+
+      const sections = [
+        { text: content.text, links: content.links },
+        { text: content.text2, links: content.links2 },
+        { text: content.text3, links: content.links3 },
+        { text: content.text4, links: content.links4 },
+        { text: content.text5, links: content.links5 },
+        { text: content.text6, links: content.links6 },
+        { text: content.text7, links: content.links7 },
+        { text: content.text8, links: content.links8 },
+        { text: content.text9, links: [] }
+      ];
+
+      for (const section of sections) {
+        if (skipTyping) {
+          // Render all remaining content instantly
+          let html = element.innerHTML;
+          for (let i = sections.indexOf(section); i < sections.length; i++) {
+            const s = sections[i];
+            html += s.text;
+            if (s.links) {
+              for (const link of s.links) {
+                html += `<a href="${link.url}" target="_blank">${link.text}</a>`;
+              }
+            }
+          }
+          element.innerHTML = html;
+          break;
+        }
+
+        // Type text character by character
+        for (let i = 0; i < section.text.length; i++) {
+          if (skipTyping) {
+            element.innerHTML += section.text.substring(i);
+            break;
+          }
+          element.innerHTML += section.text[i];
+          await new Promise(r => setTimeout(r, speed));
+        }
+
+        // Add links instantly
+        if (section.links && !skipTyping) {
+          for (const link of section.links) {
+            element.innerHTML += `<a href="${link.url}" target="_blank">${link.text}</a>`;
+          }
+        }
+      }
+
+      isTyping = false;
+    }
+
+    // Switch tab function
+    function switchTab(tabName) {
+      // Update active tab styling
+      document.querySelectorAll('.nav-tab').forEach(tab => {
+        tab.classList.remove('active');
+        if (tab.dataset.tab === tabName) {
+          tab.classList.add('active');
+        }
+      });
+
+      // Hide all sections
+      document.querySelectorAll('.content-section').forEach(section => {
+        section.classList.remove('visible');
+      });
+
+      // Show selected section
+      const section = document.getElementById(tabName);
+      if (section) {
+        section.classList.add('visible');
+      }
+
+      // If it's a terminal section and hasn't been typed yet, start typing
+      if (tabName !== 'about' && !typedTabs.has(tabName)) {
+        typedTabs.add(tabName);
+        const contentEl = document.getElementById(tabName + '-content');
+        const content = terminalContent[tabName];
+
+        // Cancel any current typing
+        if (isTyping) {
+          skipTyping = true;
+        }
+
+        setTimeout(() => {
+          if (tabName === 'ai-research') {
+            typeAIResearch(contentEl, content);
+          } else {
+            typeContent(contentEl, content);
+          }
+        }, 100);
+      }
+
+      currentTab = tabName;
+    }
+
+    // Event listeners
+    document.querySelectorAll('.nav-tab').forEach(tab => {
+      tab.addEventListener('click', () => switchTab(tab.dataset.tab));
+    });
+
+    // Click terminal content to skip animation
+    document.querySelectorAll('.terminal-content').forEach(el => {
+      el.addEventListener('click', (e) => {
+        if (e.target.tagName !== 'A' && isTyping) {
+          skipTyping = true;
+        }
+      });
+    });
+  </script>
+</body>
+</html>
